@@ -37,25 +37,25 @@ module.exports = function configJSON(req) {
               "retryCount": 1,
               "retryDelay": 2000,
               "concurrentRequests": 6,
-              "url": "https://pumpkin-crisp-99157-4e86772f050c.herokuapp.com/execute"
+              "url": "https://<YOUR_APP_NAME>.herokuapp.com/execute"
           }
       },
       "configurationArguments": {
-          "applicationExtensionKey": "80bef0b0-13c6-44ce-8ce9-a4d6d6664ccf",
+          "applicationExtensionKey": "<YOUR_INSTALLED_PACKAGE_KEY>",
           "save": {
-              "url": "https://pumpkin-crisp-99157-4e86772f050c.herokuapp.com/save",
+              "url": "https://<YOUR_APP_NAME>.herokuapp.com/save",
               "useJwt": false
           },
           "publish": {
-              "url": "https://pumpkin-crisp-99157-4e86772f050c.herokuapp.com/publish",
+              "url": "https://<YOUR_APP_NAME>.herokuapp.com/publish",
               "useJwt": false
           },
           "validate": {
-              "url": "https://pumpkin-crisp-99157-4e86772f050c.herokuapp.com/validate",
+              "url": "https://<YOUR_APP_NAME>.herokuapp.com/validate",
               "useJwt": false
           },
           "stop": {
-              "url": "https://pumpkin-crisp-99157-4e86772f050c.herokuapp.com/stop",
+              "url": "https:/<YOUR_APP_NAME>.herokuapp.com/stop",
               "useJwt": false
           }
       },
