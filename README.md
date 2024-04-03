@@ -89,14 +89,13 @@ components:
 
 ## Configure Connected App in Data Cloud 
 
-Follow the steps as pointed out in the help docs.It is basically the same as connecting Postmann for the first time. It is critical to make the next step “Authenticate app via browser” for the app to run. 
+Follow the steps as pointed out in the [help docs](https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&type=5).It is basically the same as connecting Postmann ie.for the first time (check for in setup process: All users may self-authorize, Relax IP restrictions, ). It is critical to make the next step “Authenticate app via browser” for the app to run.
 
 ## Authenticate app via browser
 
 For the auth flow to work without prompting you need to authenticate at least one time with the normal auth. You can make the authentication request via the browser. It holds all the information for the server in the URL. When you enter the URL browser window will open. Just confirm the message. 
 
-```https://<YOUR_ORG_URL>/services/oauth2/authorize?response_type=code&client_id=<YOUR_CONSUMER_KEY>&scope=api refresh_token cdp_profile_api cdp_query_api cdp_ingest_api&redirect_uri=https://whatever.de/callback
-```
+(https://<YOUR_ORG_URL>/services/oauth2/authorize?response_type=code&client_id=<YOUR_CONSUMER_KEY>&scope=api refresh_token cdp_profile_api cdp_query_api cdp_ingest_api&redirect_uri=https://whatever.de/callback)
 
 ## Clone repo from Github
 
