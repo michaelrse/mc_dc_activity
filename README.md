@@ -32,7 +32,7 @@ The payload that Data Cloud will receive contains these values.
 * Create security certification for Data Cloud and your app
 * Data Cloud:
     * Connected App: JWT Bearer Token Flow
-    * Data Stream with this schema: jbAction.yaml
+    * Data Stream with the below schema.
 
 * Node.Js installed on your machine
 * Git installed 
@@ -52,7 +52,7 @@ You need to add a custom activity via “installed packages“ in setup.
 
 ## Create Data Stream
 
-Just make sure that the schema for the Data Stream looks like this. You can copy paste the file and save it into a .yaml file and upload it for your Data Stream schema. Don’t forget to include the object name of the data stream!
+Just make sure that the schema for the Data Stream looks like this. You can copy paste the schema and save it into a .yaml file and upload it for your Data Stream schema. Don’t forget to include the object name of the data stream!
 
 ```
 openapi: 3.0.3
@@ -82,25 +82,25 @@ components:
 
 ## Generate Public Private Key
 
-* Run these commands at once in the Terminal. Just skip the next steps to let the values blank.
+* Run this command in the Terminal. Just skip the following steps to let the values blank.
 ```openssl req  -nodes -new -x509  -keyout private.pem -out server.cert ```
 * It will generate RSA Keys and will save the informations in 2 files named “server.cert” & “private.pem“. 
 * Server.cert will be uploaded in Data Cloud during Connected App configuration.
 
 ## Configure Connected App in Data Cloud 
 
-Follow the steps as pointed out in the [help docs](https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&type=5).It is basically the same as connecting Postmann ie.for the first time (check for in setup process: All users may self-authorize, Relax IP restrictions, ). It is critical to make the next step “Authenticate app via browser” for the app to run.
+Follow the steps as pointed out in the [help docs](https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&type=5).It is basically the same as connecting Postman ie. for the first time (check in setup process of connected app: All users may self-authorize, Relax IP restrictions, ). It is critical to make the next step “Authenticate app via browser” for the app to run.
 
 ## Authenticate app via browser
 
-For the auth flow to work without prompting you need to authenticate at least one time with the normal auth. You can make the authentication request via the browser. It holds all the information for the server in the URL. When you enter the URL browser window will open. Just confirm the message. 
+For the auth flow to work without prompting, you need to authenticate at least one time with the normal auth. You can make the authentication request via the browser. It holds all the information for the server in the URL. When you enter the URL browser window will open. Just confirm the message. 
 
 (https://<YOUR_ORG_URL>/services/oauth2/authorize?response_type=code&client_id=<YOUR_CONSUMER_KEY>&scope=api refresh_token cdp_profile_api cdp_query_api cdp_ingest_api&redirect_uri=https://whatever.de/callback)
 
-## Clone repo from Github
+## Clone/copy repo from Github
 
-* Run Terminal from root folder the run: npm install This will install all the dependencies from the package.json file.
-* To test locally run ```node index.js```  the index.html will be served to http://127.0.0.1:3001/
+* Copy files into app folder 
+* Run Terminal from root folder then run: ```npm install package.json``` This will install all the dependencies from the package.json file. in the folder node_modules
 * use route with POST and this payload for request to 127.0.0.1:3001/execute with Postman to test Ingestion API 
 * {
         
@@ -126,6 +126,8 @@ For the auth flow to work without prompting you need to authenticate at least on
 
 * add your private.pem file to <root_folder>/config (make sure to exclude this file in your git push if you want to make the repo public)
 * for testing include a config.env file with the config vars
+* To test locally run ```node index.js```  the index.html will be served to http://127.0.0.1:3001/
+* use route with POST and this payload for request to 127.0.0.1:3001/execute with Postman to test Ingestion API 
 * open public/images: Feel free to customise the icons for your JB activity. Format needs to be 40x40. 
 * adjust the inArguments key values with ```{{Contact.Key}} or {{InteractionDefaults.SubscriberKey}}``` for additional journey data binding. I found out that it works better with static values for these two ids when testing.
 
@@ -147,10 +149,11 @@ git push -u origin main
 ## Create Heroku App
 
 * login to Heroku: ```heroku login```
-* add a git remote to heroku: ```git remote add heroku <heroku-git-url>```
+* create Heroku app: ```Heroku create```
+* add a git remote to heroku: ```git remote add heroku <heroku-app-url>```
 * finally deploy app: ```git push heroku main```
 
-This should install the app to your heroku account. Inside Heroku there is a button called “open app”. It will serve the HTML to your browser. Feel free to check in the console if all the .js files have been loaded. 
+This should install the app to your heroku account. Inside Heroku there is a button called “open app”. It will serve the HTML to your browser. Feel free to check in the developer tool if all the .js files have been loaded. 
 
 
 ## Add Heroku vars
