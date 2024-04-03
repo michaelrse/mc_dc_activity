@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Stream Journey Action</title>
+    <link rel="stylesheet" href="/css/salesforce-lightning-design-system.min.css">
+     <!-- Include jQuery -->
+     <script type="text/javascript" src="js/jquery.min.js"></script>
+
+     <!-- Include Postmonger -->
+    <script type="text/javascript" src="js/postmonger.js"></script>
+ 
+     <!-- Include RequireJS -->
+    <script type="text/javascript" src="js/require.js"></script>
+    <style>
+        .slds-form-element {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        (function () {
+            var config = {
+                baseUrl: 'js/'
+            };
+
+            var dependencies = [
+                'customActivity'
+            ];
+
+            require(config, dependencies);
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="slds-scope">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <form class="slds-form slds-form_stacked">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="data-stream-name">Data Stream Name</label>
+                        <div class="slds-form-element__control">
+                            <input type="text" id="data-stream-name" class="slds-input" placeholder="Enter Data Stream Name">
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="data-stream-object-name">Data Stream Object Name</label>
+                        <div class="slds-form-element__control">
+                            <input type="text" id="data-stream-object-name" class="slds-input" placeholder="Enter Data Stream Object Name">
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="journey-action">Journey Action</label>
+                        <div class="slds-form-element__control">
+                            <input type="text" id="journey-action" class="slds-input" placeholder="Enter Journey Action">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
