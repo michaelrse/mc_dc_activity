@@ -1,6 +1,6 @@
-# Journey Builder Data Cloud streaming API action
+# Salesforce Marketing Cloud Journey Builder Data Cloud streaming API action
 
-## NOTE: This app and the associated code is NOT production quality, it’s pure purpose is to demonstrate the full flow of custom interactions in Marketing Cloud Journey Builder to Data Cloud. 
+## NOTE: This app and the associated code is NOT production quality, it’s pure purpose is to demonstrate the full flow of custom interactions in Salesforce Marketing Cloud Journey Builder to Data Cloud. 
 
 Hi there, 
 
